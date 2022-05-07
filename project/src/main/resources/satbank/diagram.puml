@@ -1,0 +1,41 @@
+@startuml diagram
+
+object user1 {
+    name: Ola
+    password: 123
+    email: ola@gmail.com
+    account: null
+}
+
+object user1Oppdatert {
+    name: Ola
+    password: 123
+    email: ola@gmail.com
+    account: [konto1]
+}
+
+
+object konto1 {
+    name: "konto1"
+    type: 'm'
+    balance: 0
+}
+
+object konto1Oppdatert {
+    name: "konto1"
+    type: 'm'
+    balance: 500
+}
+
+object konto1Oppdatert2 {
+    name: "konto1"
+    type: 'm'
+    balance: 300
+}
+
+konto1 ..|> konto1Oppdatert  : addBalance(500)
+konto1Oppdatert ..|> konto1Oppdatert2   : removeBalance(200)
+
+user1 ..|> user1Oppdatert : createAccount(konto1)
+
+@enduml

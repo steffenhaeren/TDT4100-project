@@ -1,0 +1,1 @@
+run fra /TDT4100_prosjekt_tagemb ellers vil man få problemer med filplasseringer
